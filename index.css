@@ -37,7 +37,7 @@
 body {
 	/* BACKGROUND */
 	background-color: #000000;
-	background-image: url("background_bigger.bmp"), url("background_big.bmp"), url("background.bmp");
+	background-image: url("background_bigger.png"), url("background_big.png"), url("background.png");
 	animation: backgroundScroll 4s linear infinite;
 	/* TEXT */
 	text-align: center;
