@@ -45,7 +45,7 @@ body {
 	font-family: "Basic 8x8", "Courier New", Monospace;
 }
 
-#outerBox {
+div.outerBox {
 	width: 90%;
 	max-width: 600px;
 	margin-left: auto;
@@ -77,6 +77,7 @@ h1 {
 	animation: titleSpin 5s linear infinite, titleColors 50s linear infinite;
 	/*top right bottom left*/
 	margin: 32px 0px 32px 0px;
+	white-space: nowrap;
 }
 
 h2 {
