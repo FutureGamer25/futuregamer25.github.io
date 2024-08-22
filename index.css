@@ -1,45 +1,94 @@
+@font-face {
+	font-family: "Basic 8x8";
+	src: url("fg25-8x8.woff");
+}
+
+@font-face {
+	font-family: "Comic Sans Downloaded";
+	src: url("comic-sans.woff");
+}
+
 @keyframes backgroundScroll {
- 0% {
-   background-position: 0px 0px
- }
- 100%{
-   background-position: 36px 28px
- }
+	0% {background-position: 0px 0px, 100px 0px, 0px 0px;}
+	100% {background-position: 144px 112px, 172px 56px, -36px 28px;}
+}
+
+@keyframes titleSpin {
+	0% {transform: scaleY(0.25) rotate(0deg);}
+	100% {transform: scaleY(0.25) rotate(360deg);}
+}
+
+@keyframes titleColors {
+	0% {color: #ff0000;}
+	16.5% {color: #ffff00;}
+	33% {color: #00ff00;}
+	49.5% {color: #00ffff;}
+	66% {color: #0000ff;}
+	82.5% {color: #ff00ff;}
+	100% {color: #ff0000;}
+}
+
+@keyframes footerScroll {
+	0% {background-position: -64px 0px;}
+	5% {background-position: 0px 0px;}
+	100% {background-position: 0px 0px;}
 }
 
 body {
 	/* BACKGROUND */
-	background-image: url("background.bmp");
 	background-color: #000000;
-	animation: backgroundScroll 2s linear infinite;
+	background-image: url("background_bigger.bmp"), url("background_big.bmp"), url("background.bmp");
+	animation: backgroundScroll 4s linear infinite;
 	/* TEXT */
 	text-align: center;
 	color: #ffffff;
-	font-family: "Comic Sans MS", /*IOS*/"Marker Felt Wide", Cursive;
+	font-family: "Basic 8x8", "Courier New", Monospace;
 }
 
 #outerBox {
 	width: 90%;
-	/*min-width: 450px;*/
 	max-width: 600px;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 16px;
+	margin-bottom: 16px;
 	border-style: solid;
-	border-width: 1px;
-	background-color: #00000080;
+	border-width: 6px;
+	border-color: #404040;
+	background-color: #000000;
+}
+
+#footer {
+	width: 90%;
+	max-width: 600px;
+	height: 64px;
+	margin: auto;
+	
+	background-color: #000000;
+	background-image: url("fg25-64x64.png");
+	animation: footerScroll 15s ease infinite
 }
 
 h1 {
-	font-size: 4em;
-	transform: scaleY(0.4);
+	font-family: "Comic Sans MS", "Comic Sans Downloaded", Cursive;
+	font-size: 5em;
+	color: #ff0000;
+	transform: scaleY(0.25);
+	animation: titleSpin 5s linear infinite, titleColors 50s linear infinite;
+	/*top right bottom left*/
+	margin: 32px 0px 32px 0px;
 }
 
 h2 {
+	/*font-size: 1.5em;*/
 	font-size: 1.5em;
+	font-weight: normal;
 }
 
 a:link {
 	color: red;
-	font-size: 1.1em;
+	/*font-size: 1.1em;*/
+	font-size: 1em;
 }
 
 a:visited {
