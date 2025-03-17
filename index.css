@@ -1,6 +1,13 @@
 @font-face {
 	font-family: "Basic 8x8";
 	src: url("fg25-8x8.woff");
+	/*font-size: 8px;*/
+}
+
+@font-face {
+	font-family: "MSPaint Medium";
+	src: url("mspaint25.woff");
+	/*font-size: 16px;*/
 }
 
 @font-face {
@@ -9,13 +16,13 @@
 }
 
 @keyframes backgroundScroll {
-	0% {background-position: 0px 0px, 100px 0px, 0px 0px;}
-	100% {background-position: 144px 112px, 172px 56px, -36px 28px;}
+	0% {background-position: 0px 0px, 0px 0px;}
+	100% {background-position: 135px 120px, -108px 93px;}
 }
 
 @keyframes titleSpin {
-	0% {transform: scaleY(0.25) rotate(0deg);}
-	100% {transform: scaleY(0.25) rotate(360deg);}
+	0% {transform: scaleX(4) rotate(0deg);}
+	100% {transform: scaleX(4) rotate(360deg);}
 }
 
 @keyframes titleColors {
@@ -30,70 +37,93 @@
 
 @keyframes footerScroll {
 	0% {background-position: -64px 0px;}
-	5% {background-position: 0px 0px;}
+	20% {background-position: 0px 0px;}
 	100% {background-position: 0px 0px;}
 }
 
-body {
-	/* BACKGROUND */
-	background-color: #000000;
-	background-image: url("background_bigger.png"), url("background_big.png"), url("background.png");
-	animation: backgroundScroll 4s linear infinite;
-	/* TEXT */
-	text-align: center;
-	color: #ffffff;
-	font-family: "Basic 8x8", "Courier New", Monospace;
+html {
+	cursor: url("mouse25-3x.png"), auto;
+	overflow-x: clip;
 }
 
-div.outerBox {
+body {
+	/* MISC */
+	margin: 0px;
+	/* BACKGROUND */
+	background-color: #ffffff;
+	background-image: url("mspaint-background-3x.png"), url("mspaint-background-small-3x.png");
+	animation: backgroundScroll 5s linear infinite;
+	/* TEXT */
+	text-align: center;
+	color: #000000;
+	font-family: "MSPaint Medium", "Courier New", Monospace;
+	font-size: 16px;
+}
+
+main {
+	margin: 16px auto;
 	width: 90%;
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 16px;
-	margin-bottom: 16px;
-	border-style: solid;
-	border-width: 6px;
-	border-color: #404040;
-	background-color: #000000;
+	max-width: 570px;
+}
+
+div.box {
+	margin: 16px 0px;
+	padding: 16px;
+	border-image: url("mspaint-9slice.png");
+	border-image-slice: 66 fill;
+	border-image-width: 66px;
+	border-image-repeat: stretch;
 }
 
 #footer {
-	width: 90%;
-	max-width: 600px;
 	height: 64px;
-	margin: auto;
 	
 	background-color: #000000;
 	background-image: url("fg25-64x64.png");
-	animation: footerScroll 15s ease infinite
+	animation: footerScroll 5s ease infinite
+}
+
+div.cool-and-new {
+	height: 142px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 h1 {
+	margin: auto;
+	background-color: #f4f4ec;
+	filter: blur(0.5px);
 	font-family: "Comic Sans MS", "Comic Sans Downloaded", Cursive;
-	font-size: 5em;
-	color: #ff0000;
-	transform: scaleY(0.25);
-	animation: titleSpin 5s linear infinite, titleColors 50s linear infinite;
-	/*top right bottom left*/
-	margin: 32px 0px 32px 0px;
+	font-size: 20px;
+	text-align: center;
 	white-space: nowrap;
+	color: #ff0000;
+	transform: scaleX(4);
+	animation: titleSpin 5s linear infinite, titleColors 50s linear infinite;
 }
 
 h2 {
-	/*font-size: 1.5em;*/
-	font-size: 1.5em;
+	margin: 16px 0px;
+	font-size: 3em;
 	font-weight: normal;
 }
 
-a:link {
-	color: red;
-	/*font-size: 1.1em;*/
-	font-size: 1em;
+p {
+	margin: 12px 0px;
+	font-size: 2em;
+}
+
+/*a:link*/
+a {
+	cursor: url("mouse25-click-3x.png"), auto;
+	color: #4040ff;
+	text-decoration: underline solid currentcolor 1.5px;
+	text-decoration: none;
 }
 
 a:visited {
-	color: purple;
+	color: #8000ff;
 }
 
 a:hover {
@@ -101,6 +131,5 @@ a:hover {
 }
 
 a:active {
-	color: pink;
 	text-transform: uppercase;
 }
